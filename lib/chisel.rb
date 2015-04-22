@@ -23,9 +23,6 @@ class ChiselParser
     chunks = chunks.map {|line| ListsParser.new(line).to_ulist}
     chunks = chunks.map {|line| ListsParser.new(line).to_olist}
 
-
-
-  # O_lists
   # links
     chunks.join("\n")
   end
@@ -35,7 +32,6 @@ end
 
 if __FILE__ == $0
   my_input  = ARGV[0]
-
   my_output = ARGV[1]
   markdown  = File.read(my_input)
   html      = ChiselParser.new(markdown).to_html
@@ -43,5 +39,3 @@ if __FILE__ == $0
   puts "Converted #{my_input} (#{markdown.count("\n")} lines) to #{my_output} (#{html.count("<\n>")} lines)"
 end
 
-# input_string = "## here's some markdown"
-# html        = ChiselParser.new(input_string).to_html

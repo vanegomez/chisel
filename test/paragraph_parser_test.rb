@@ -13,26 +13,28 @@ class ParagraphParserTest < Minitest::Test
     assert_equal "<p>\nmarkdown\n</p>", parragraph.to_paragraph
   end
 
-  def test_it_returns_string_with_one_hash
+  def test_it_is_not_a_paragraph_if_it_starts_with_a_hash
     parragraph = ParagraphParser.new("#markdown")
     assert_equal "#markdown", parragraph.to_paragraph
   end
 
-  def test_it_returns_string_with_two_hashes
+  def test_it_is_not_a_paragraph_if_it_starts_with_two_hashes
     parragraph = ParagraphParser.new("##markdown")
     assert_equal "##markdown", parragraph.to_paragraph
   end
 
-  def test_it_returns_string_with_five_hashes
+  def test_it_is_not_a_paragraph_if_it_starts_with_five_hashes
     parragraph = ParagraphParser.new("#####markdown")
     assert_equal "#####markdown", parragraph.to_paragraph
   end
 
-  def test_it_returns_string
+  def test_it_is_not_a_paragraph_if_starts_with_asterik
+    parragraph = ParagraphParser.new("*markdown")
+    assert_equal "*markdown", parragraph.to_paragraph
+  end
+
+  def test_it_is_not_a_paragraph_if_starts_with_integer
     parragraph = ParagraphParser.new("1. markdown")
     assert_equal "1. markdown", parragraph.to_paragraph
   end
-
 end
-
-#make a test for asterisk
