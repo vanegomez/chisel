@@ -28,4 +28,11 @@ class ParagraphParserTest < Minitest::Test
     assert_equal "#####markdown", parragraph.to_paragraph
   end
 
+  def test_it_returns_string
+    parragraph = ParagraphParser.new("1. markdown")
+    assert_equal "1. markdown", parragraph.to_paragraph
+  end
+
 end
+
+#make a test for asterisk

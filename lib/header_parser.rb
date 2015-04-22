@@ -1,4 +1,4 @@
-class HashParser
+class HeaderParser
   attr_reader :markdown
 
   def initialize(markdown)

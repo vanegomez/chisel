@@ -8,7 +8,7 @@ class ListsParserTest < Minitest::Test
     assert list
   end
 
-  def test_it_replaces
+  def test_it_makes_unordered_lists
     list = ListsParser.new("* Sushi\n* Barbeque\n* Mexican\n")
     assert_equal "<ul>\n<li>Sushi</li>\n<li>Barbeque</li>\n<li>Mexican</li>\n</ul>", list.to_ulist
   end

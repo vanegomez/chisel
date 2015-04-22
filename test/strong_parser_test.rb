@@ -17,4 +17,9 @@ class StrongParserTest < Minitest::Test
     s = StrongParser.new("*markdown*")
     assert_equal "*markdown*", s.to_strong
   end
+
+  def test_it_replaces_only_asterisks_in_a_row
+    m = StrongParser.new("My *emphasized and **stronged** text* is awesome.")
+    assert_equal "My *emphasized and <strong>stronged</strong> text* is awesome.", m.to_strong
+  end
 end

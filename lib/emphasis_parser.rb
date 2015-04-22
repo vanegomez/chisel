@@ -5,7 +5,7 @@ class EmphasisParser
   end
 
   def to_emphasis
-    @markdown.gsub(/\*(.*)\*/,"<em>\\1</em>")
+    @markdown.gsub(/\*(.+)\*/,"<em>\\1</em>")
   end
 
 end
