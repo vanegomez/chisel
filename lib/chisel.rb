@@ -24,7 +24,7 @@ class ChiselParser
     chunks = chunks.map {|line| ListsParser.new(line).to_olist}
 
 
-    # U_lists
+
   # O_lists
   # links
     chunks.join("\n")

@@ -13,10 +13,11 @@ class ListsParser
   end
 
   def to_olist
-    # if markdown.start_with?("")
+    if markdown[0].to_i > 0
     "<ol>\n" + markdown.gsub(/^\d+\. (.+)/,"<li>\\1</li>") + "</ol>"
-    # end
+    else
+      markdown
+    end
   end
-
 end
 
