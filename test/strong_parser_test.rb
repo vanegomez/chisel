@@ -13,8 +13,8 @@ class StrongParserTest < Minitest::Test
     assert_equal "<strong>markdown</strong>", m.to_strong
   end
 
-  def test_it_replaces_asterisk_to_emphasis_and_strong
-    s = StrongParser.new("**markdown**")
-    e = EmphasisParser.new()
+  def test_it_does_not_replace_one_asterisk_to_strong
+    s = StrongParser.new("*markdown*")
+    assert_equal "*markdown*", s.to_strong
   end
 end

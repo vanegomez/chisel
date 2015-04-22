@@ -1,6 +1,7 @@
 require 'pry'
 require_relative "paragraph_parser"
 require_relative "hash_parser"
+require_relative "amp_parser"
 
 class ChiselParser
 
@@ -11,16 +12,17 @@ class ChiselParser
   end
 
   def to_html
-  paragraph = markdown.map {|line| ParagraphParser.new(line).to_paragraph}
-  header = paragraph.map {|line| HashParser.new(line).to_header}
+    chunks = markdown
+    chunks = chunks.map {|line| ParagraphParser.new(line).to_paragraph}
+    chunks = chunks.map {|line| HashParser.new(line).to_header}
+    chunks = chunks.map {|line| AmpParser.new(line).to_amp}
 
-  # Evaluate array use map to send strings line by line
-  #   # output string of parsed markdown converted into HTML
-  #   # ChiselParser needs to use other specific parsers to check for each
-  #   # type of tag
-  #   # - HashParser
-  #   # - EmParser
-  #   # (i.e. do all the pieces)
+  # emphasis
+  # Strong
+  # make a test for emphasis and strong
+  # U_lists
+  # O_lists
+    chunks.join("\n")
   end
 
 

@@ -5,8 +5,6 @@ class ParagraphParser
   end
 
   def to_paragraph
-    require 'pry'
-    binding.pry
     if markdown.start_with?("#")
       markdown
     else

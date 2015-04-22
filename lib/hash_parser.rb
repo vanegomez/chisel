@@ -10,7 +10,9 @@ class HashParser
   end
 
   def to_header
-    if hash_counter == 1
+    if hash_counter == 0
+      @markdown
+    elsif hash_counter == 1
       @markdown.gsub(/^# (.*)/,"<h1>\\1</h1>") << "\n"
     elsif hash_counter == 2
       @markdown.gsub(/^## (.*)/,"<h2>\\1</h2>") << "\n"

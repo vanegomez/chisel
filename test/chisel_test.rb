@@ -13,6 +13,15 @@ class ChiselTest < Minitest::Test
     assert_equal ["markdown\nhtml"], markdown.markdown
   end
 
+  def test_it_makes_a_paragraph
+    markdown = ChiselParser.new("markdown\nhtml")
+    assert_equal "<p>\nmarkdown\nhtml\n</p>", markdown.to_html
+  end
+
+  def test_it_replaces_to_amp
+    markdown = ChiselParser.new("markdown\nhtml &")
+    assert_equal "<p>\nmarkdown\nhtml &amp;\n</p>", markdown.to_html
+  end
 
 end
 
