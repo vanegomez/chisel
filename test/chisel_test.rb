@@ -50,7 +50,7 @@ class ChiselTest < Minitest::Test
 
   def test_it_converts_link
     m = LinkParser.new("[This link](http://example.net/)")
-    assert_equal "<a href=\"http://example.net/\">This link</a>", m.to_link_no_title
+    assert_equal "<a href=\"http://example.net/\">This link</a>", m.to_link
   end
 end
 

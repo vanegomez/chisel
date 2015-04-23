@@ -16,7 +16,7 @@ class ChiselParser
 
   def to_html
     chunks = markdown
-    chunks = chunks.map {|line| LinkParser.new(line).to_link_no_title}
+    chunks = chunks.map {|line| LinkParser.new(line).to_link}
     chunks = chunks.map {|line| ParagraphParser.new(line).to_paragraph}
     chunks = chunks.map {|line| HeaderParser.new(line).to_header}
     chunks = chunks.map {|line| StrongParser.new(line).to_strong}

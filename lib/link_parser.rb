@@ -5,13 +5,17 @@ class LinkParser
     @markdown = markdown
   end
 
-  def to_link_no_title
-    if markdown[/\[.+\]\(.+\)/]
+  def to_link
+  if markdown[/\[.+\]\(.+\)/]
       '<a href="' + hyperlink + '">' + link_words + '</a>'
     else
       markdown
     end
   end
+
+  # def title
+  #   replace_borders(/"(.+)"/)
+  # end
 
   def hyperlink
     replace_borders(/\((.+)\)/)
@@ -36,3 +40,6 @@ end
 # This is [an example](http://example.com/ "Title") inline link.
 # <p>This is <a href="http://example.com/" title="Title"> an example</a> inline link.</p>
 
+# if markdown[/"/]
+#   '<a href="' + hyperlink + '" title="'+ title +'">' + link_words + '</a>'
+#   els
