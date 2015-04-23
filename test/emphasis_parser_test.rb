@@ -1,6 +1,6 @@
 require "minitest/autorun"
 require "minitest/pride"
-require "../lib/emphasis_parser"
+require_relative "../lib/emphasis_parser"
 
 class EmphasisParserTest < Minitest::Test
   def test_it_exists

@@ -14,7 +14,7 @@ class ListsParser
 
   def to_olist
     if markdown[0].to_i > 0
-    "<ol>\n" + markdown.gsub(/^\d+\. (.+)/,"<li>\\1</li>") + "</ol>"
+    "<ol>\n" + markdown.gsub(/^\d+\. (.+)/,"<li>\\1</li>") + "\n</ol>\n"
     else
       markdown
     end

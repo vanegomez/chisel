@@ -16,3 +16,7 @@ My favorite cuisines are:
 1. Sushi
 2. Barbeque
 3. Mexican
+
+[This link](http://example.net/)
+
+This is [an example](http://example.com/ "Title") inline link.
