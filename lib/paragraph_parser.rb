@@ -1,5 +1,6 @@
 class ParagraphParser
   attr_reader :markdown
+
   def initialize(markdown)
     @markdown = markdown
   end
@@ -8,7 +9,7 @@ class ParagraphParser
     if not_a_paragraph?
       markdown
     else
-      "<p>\n" + markdown + "\n</p>"
+      "<p>\n" + markdown + "\n</p>\n"
     end
   end
 

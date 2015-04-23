@@ -47,8 +47,5 @@ class ChiselTest < Minitest::Test
     list = ChiselParser.new("1. Sushi\n2. Barbeque\n3. Mexican\n")
     assert_equal "<ol>\n<li>Sushi</li>\n<li>Barbeque</li>\n<li>Mexican</li>\n</ol>", list.to_html
   end
-
 end
 
-#<p>\nmarkdown\n</p>
-# My *emphasized and **stronged** text* is awesome.

@@ -6,7 +6,7 @@ class ListsParser
 
   def to_ulist
     if markdown.start_with?("*")
-    "<ul>\n" + markdown.gsub(/\* (.+)/,"<li>\\1</li>") + "</ul>"
+    "<ul>\n" + markdown.gsub(/\* (.+)/,"<li>\\1</li>") + "\n</ul>\n"
     else
       markdown
     end
